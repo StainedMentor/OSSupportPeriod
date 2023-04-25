@@ -97,6 +97,7 @@ $ cd project
 $ docker build -t internship_task .
 $ docker run --rm -w /usr/src/internship_task -v "$(pwd):/usr/src/internship_task" -e DATA_JSON=src/data/data.json -e COUNT=5 internship_task:latest
 ```
+### NOTICE - adding --platform linux/amd64 parameter to docker commands fixes issues on ARM machines.
 - the second command will build a container image `internship_task` based on the latest Ubuntu with all appropriate components (compiler, libraries), 
 - the third one will execute the `internship_task` image and:
     - will start the build of your sources with GCC compiler, producing the binary file `internship` in a new folder `project/build`,
